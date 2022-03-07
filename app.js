@@ -13,6 +13,10 @@ app.get('/', (req, res) => {
     res.render('index')
 })
 
+app.get('/restaurent/1', (req, res) => {
+    res.render('show')
+})
+
 app.listen(port, () => {
     console.log(`Web is starting on http://localhost:${port}`)
 })
