@@ -1,26 +1,4 @@
 <style>
-    header {
-        overflow: hidden;
-    }
-
-    .navbar .navbar-brand {
-        color: #4592af;
-    }
-
-    .navbar .navbar-brand:hover {
-        color: #226089;
-    }
-
-    .banner {
-        position: relative;
-        z-index: -1;
-        margin: -5px;
-        height: 360px;
-        background: #dddddd center center url('https://assets-lighthouse.s3.amazonaws.com/uploads/image/file/5720/restaurants-list-cover.jpg');
-        background-size: cover;
-        filter: blur(3px);
-    }
-
     .search-bar .search-bar-outer {
         margin: 0 auto;
         max-width: 680px;
@@ -75,20 +53,6 @@
         }
     }
 </style>
-
-<header>
-  <!-- navigation -->
-  <nav class="navbar navbar-light bg-light">
-    <div class="container">
-      <a class="navbar-brand" href="/">
-          <img src="https://assets-lighthouse.s3.amazonaws.com/uploads/image/file/6227/restaurant-list-logo.png" width="30" height="30" class="d-inline-block align-top" alt="好。吃">
-          我的餐廳清單
-        </a>
-    </div>
-  </nav>
-
-  <div class="banner"></div>
-</header>
 
 <h1 class="mb-1 restaurant-show-title">{{ restaurant.name }}</h1>
 <div class="container">

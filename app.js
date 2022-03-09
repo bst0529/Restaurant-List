@@ -14,8 +14,21 @@ app.get('/', (req, res) => {
 })
 
 app.get('/search', (req, res) => {
-    let restaurants = restaurantList.results.filter(restaurant => {return restaurant.name.toLowerCase().includes(req.query.keyword.toLowerCase())})
-    res.render('index',{restaurants, keyword: req.query.keyword})
+    if (!req.query.keyword) {
+        res.redirect('/')
+    }
+
+    let _keyword = req.query.keyword.toLowerCase()
+    let restaurants = restaurantList.results.filter(restaurant => {
+        return restaurant.name.toLowerCase().includes(_keyword) 
+            || restaurant.category.includes(_keyword)
+    })
+    console.log('restaurants.length',restaurants.length === 0)
+    if (restaurants.length === 0) {
+        res.render('error',{restaurants, keyword: req.query.keyword})
+    } else {
+        res.render('index',{restaurants, keyword: req.query.keyword})
+    }
 })
 
 app.get('/restaurants/:id', (req, res) => {

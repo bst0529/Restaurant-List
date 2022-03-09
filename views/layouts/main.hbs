@@ -7,8 +7,46 @@
     <title>餐廳清單</title>
     <link rel="stylesheet" href="/css/bootstrap.css">
     <link rel="stylesheet" href="/css/all.css">
+    <style>
+        header {
+            overflow: hidden;
+        }
+
+        .navbar .navbar-brand {
+            color: #4592af;
+        }
+
+        .navbar .navbar-brand:hover {
+            color: #226089;
+        }
+
+        .banner {
+            position: relative;
+            z-index: -1;
+            margin: -5px;
+            height: 360px;
+            background: #dddddd center center url('https://assets-lighthouse.s3.amazonaws.com/uploads/image/file/5720/restaurants-list-cover.jpg');
+            background-size: cover;
+            filter: blur(3px);
+        }
+    </style>
 </head>
 <body>
+    <header>
+        <!-- navigation -->
+        <nav class="navbar navbar-light bg-light">
+            <div class="container">
+            <a class="navbar-brand" href="/">
+                <img src="https://assets-lighthouse.s3.amazonaws.com/uploads/image/file/6227/restaurant-list-logo.png" width="30" height="30" class="d-inline-block align-top" alt="我的餐廳清單">
+                我的餐廳清單
+                </a>
+            </div>
+        </nav>
+
+        <div class="banner"></div>
+    </header>
+
+
     {{{ body }}}
     <script src="/js/jquery-3.6.0.js"></script>
     <script src="/js/popper.js"></script>
