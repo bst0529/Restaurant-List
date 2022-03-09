@@ -13,8 +13,9 @@ app.get('/', (req, res) => {
     res.render('index')
 })
 
-app.get('/restaurants/1', (req, res) => {
-    res.render('show')
+app.get('/restaurants/:id', (req, res) => {
+    let restaurant = restaurantList.results.find(restaurant => restaurant.id.toString() === req.params.id)
+    res.render('show',{restaurant})
 })
 
 app.listen(port, () => {
