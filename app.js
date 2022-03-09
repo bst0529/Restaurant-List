@@ -13,6 +13,11 @@ app.get('/', (req, res) => {
     res.render('index',{restaurants: restaurantList.results})
 })
 
+app.get('/search', (req, res) => {
+    let restaurants = restaurantList.results.filter(restaurant => {return restaurant.name.toLowerCase().includes(req.query.keyword.toLowerCase())})
+    res.render('index',{restaurants, keyword: req.query.keyword})
+})
+
 app.get('/restaurants/:id', (req, res) => {
     let restaurant = restaurantList.results.find(restaurant => restaurant.id.toString() === req.params.id)
     res.render('show',{restaurant})
